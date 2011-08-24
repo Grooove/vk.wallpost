@@ -274,7 +274,8 @@ class vk_wallpost
     curl_setopt($c, CURLOPT_POST, 1);  
     curl_setopt($c, CURLOPT_REFERER, 'http://vkontakte.ru/share.php');
     curl_setopt($c, CURLOPT_POSTFIELDS, $q);
-    curl_setopt($c, CURLOPT_URL, 'http://vkontakte.ru/share.php');   
+    curl_setopt($c, CURLOPT_URL, 'http://vkontakte.ru/share.php');
+    curl_setopt($c, CURLOPT_FOLLOWLOCATION, 1);
     $r = $this->execCurl($c, 'uploadPhoto');
     if(preg_match('/onUploadDone/i', $r, $o))  
     {
